@@ -72,7 +72,7 @@
         const tick = (now) => {
           const progress = Math.min((now - start) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(target * eased).toLocaleString('pt-BR');
+          el.textContent = Math.round(target * eased).toLocaleString('en-US');
           if (progress < 1) requestAnimationFrame(tick);
         };
         requestAnimationFrame(tick);
@@ -94,7 +94,7 @@
   for (let i = 0; i < slides.length; i++) {
     const dot = document.createElement('button');
     dot.className = 'dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
+    dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
     dot.addEventListener('click', () => goTo(i));
     dotsEl.appendChild(dot);
   }
